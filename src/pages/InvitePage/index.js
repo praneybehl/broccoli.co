@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
-import Hero from "../../components/Hero";
+import Hero from "../../blocks/Hero";
 
 const InvitePageStyled = styled.div`
 	align-items: center;

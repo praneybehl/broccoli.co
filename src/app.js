@@ -2,9 +2,9 @@ import React from 'react';
 import styled, {ThemeProvider} from 'styled-components';
 import theme from './theme';
 import {GlobalStyles} from './theme/global';
-import Header from "./components/Header";
+import Header from "./blocks/Header";
 import ScreenReaderOnly from "./components/ScreenReaderOnly";
-import Footer from "./components/Footer";
+import Footer from "./blocks/Footer";
 import InvitePage from "./pages/InvitePage";
 
 const AppStyled = styled.div`
