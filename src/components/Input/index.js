@@ -28,6 +28,7 @@ const InputStyled = styled.input`
 	'&::placeholder': {
 		color: ${({theme}) => theme.colors.grey500};
 	}
+	${errorStyles}
 `;
 
 const Input = (props) => (
