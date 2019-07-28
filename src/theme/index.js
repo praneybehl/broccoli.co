@@ -16,8 +16,17 @@ const black = '#000000';
 const bodyBg = white;
 const bodyColor = grey800;
 
+// Responsive breakpoints and media-queries (mobile first).
+const breakpoints = [ "576px", "768px", "992px", "1200px"];
+
 const theme = {
-	breakpoints: ['40em', '52em', '64em'],
+	breakpoints,
+	mediaQueries: {
+		small: `@media screen and (min-width: ${breakpoints[0]})`,
+		medium: `@media screen and (min-width: ${breakpoints[1]})`,
+		large: `@media screen and (min-width: ${breakpoints[2]})`,
+		xlarge: `@media screen and (min-width: ${breakpoints[3]})`,
+	},
 	fontSizes: [
 		12, 14, 16, 20, 24, 32, 48, 64
 	],
