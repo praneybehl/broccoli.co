@@ -14,6 +14,7 @@ const grey700 = '#616161';
 const grey800 = '#424242';
 const grey900 = '#212121';
 const black = '#000000';
+const error = '#cc0000';
 const bodyBg = white;
 const bodyColor = grey900;
 
@@ -67,6 +68,7 @@ const theme = {
 		black,
 		bodyBg,
 		bodyColor,
+		error,
 	},
 	space: [
 		0, 4, 8, 16, 32, 64, 128, 256
