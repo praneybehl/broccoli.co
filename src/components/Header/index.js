@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import styled from 'styled-components';
+import styled, {css} from 'styled-components';
 import Container from "../Container";
 
 const HeaderStyled = styled.header`
@@ -14,10 +14,15 @@ const HeaderLogo = styled.div`
 	color: ${({theme}) => theme.colors.grey800};
 	font-size: ${({theme}) => theme.fontSizes[2]};
 	font-weight: ${({theme}) => theme.fontWeights.bold};
+	text-align: center;
+	${({theme}) => css`${theme.mediaQueries.md} {
+		text-align: left;
+		font-size: ${theme.fontSizes[3]};
+	}`}
 `;
 
-const Header = ({logoText}) => (
-	<HeaderStyled>
+const Header = ({logoText, ...props}) => (
+	<HeaderStyled{...props}>
 		<Container>
 			<HeaderLogo>{logoText}</HeaderLogo>
 		</Container>
