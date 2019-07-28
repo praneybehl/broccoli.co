@@ -1,3 +1,4 @@
+import {buttonSizes} from './buttons';
 // App theme
 
 // Colors Palette
@@ -39,16 +40,6 @@ const fontSizes = [
 	'3.2rem', '4.8rem', '6.4rem'
 ];
 
-const typeSizes = {
-	h1: fontSizes[5],
-	h2: fontSizes[4],
-	h3: fontSizes[3],
-	h4: fontSizes[2],
-	h5: fontSizes[1],
-	h6: fontSizes[1],
-	small: fontSizes[0]
-};
-
 const bodyText = fontSizes[1];
 const headingWeight = fontWeights.bold;
 const headingLineHeight = 1.4;
@@ -87,12 +78,12 @@ const theme = {
 	headingWeight,
 	headingLineHeight,
 	headingFontFamily,
-	typeSizes,
 	shadows: {
 		small: '0 0 4px rgba(0, 0, 0, .125)',
 		large: '0 0 24px rgba(0, 0, 0, .125)'
 	},
-	maxContainerWidth: '992px'
+	maxContainerWidth: '992px',
+	buttonSizes
 };
 
 export default theme;
