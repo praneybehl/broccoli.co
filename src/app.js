@@ -1,28 +1,24 @@
 import React from 'react';
-import styled from 'styled-components';
-
-const AppStyled = styled.main`
-	display: block;
-`;
+import {ThemeProvider} from 'styled-components';
+import theme from './theme';
+import {GlobalStyles} from './theme/global';
+import Header from "./components/Header";
+import ScreenReaderOnly from "./components/ScreenReaderOnly";
 
 const App = () => {
 	return (
-		<AppStyled className="App">
-			<header className="App-header">
-				<p>
-					Edit <code>src/App.js</code> and save to reload.
-				</p>
-				<a
-					className="App-link"
-					href="https://reactjs.org"
-					target="_blank"
-					rel="noopener noreferrer"
-				>
-					Learn React
-				</a>
-			</header>
-		</AppStyled>
+		<ThemeProvider theme={theme}>
+			<>
+				<ScreenReaderOnly href="#mainContent">
+					Skip to main content
+				</ScreenReaderOnly>
+				<Header />
+				<main id="mainContent">
+				</main>
+				<GlobalStyles />
+			</>
+		</ThemeProvider>
 	);
-}
+};
 
 export default App;
