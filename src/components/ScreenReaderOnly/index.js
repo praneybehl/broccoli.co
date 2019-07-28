@@ -1,14 +1,14 @@
 import styled from 'styled-components';
 
 const ScreenReaderOnly = styled.a`
-	position: absolute;
-	width: 1px;
+	border: 0;
+	clip: rect(0, 0, 0, 0);
 	height: 1px;
 	padding: 0;
 	overflow: hidden;
-	clip: rect(0, 0, 0, 0);
+	position: absolute;
+	width: 1px;
 	white-space: nowrap;
-	border: 0;
 	
 	&:active,
 	&:focus {
@@ -18,6 +18,7 @@ const ScreenReaderOnly = styled.a`
 		overflow: visible;
 		clip: auto;
 		white-space: normal;
+		outline: none;
 	}
 `;
 
