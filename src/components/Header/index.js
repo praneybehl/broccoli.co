@@ -8,6 +8,10 @@ const HeaderStyled = styled.header`
 	border-bottom: 2px solid ${({theme}) => theme.colors.grey200};
 	display: flex;
 	height: 60px;
+	left: 0;
+	position: fixed;
+	top: 0;
+	width: 100%;
 `;
 
 const HeaderLogo = styled.div`
