@@ -1,4 +1,4 @@
-
+// App theme
 
 // Colors Palette
 const white = '#ffffff';
@@ -14,22 +14,53 @@ const grey800 = '#424242';
 const grey900 = '#212121';
 const black = '#000000';
 const bodyBg = white;
-const bodyColor = grey800;
+const bodyColor = grey900;
 
 // Responsive breakpoints and media-queries (mobile first).
-const breakpoints = [ "576px", "768px", "992px", "1200px"];
+const breakpoints = [ '576px', '768px', '992px', '1200px'];
+
+const fonts = {
+	base: `'Montserrat', sans-serif`,
+	caveat: `'Caveat', cursive`,
+};
+
+const fontWeights = {
+	light: 300,
+	regular: 400,
+	medium: 500,
+	semiBold: 600,
+	bold: 700
+};
+
+const headingFontFamily = fonts.base;
+
+const fontSizes = [
+	'1.2rem', '1.6rem', '2rem', '2.4rem',
+	'3.2rem', '4.8rem', '6.4rem'
+];
+
+const typeSizes = {
+	h1: fontSizes[5],
+	h2: fontSizes[4],
+	h3: fontSizes[3],
+	h4: fontSizes[2],
+	h5: fontSizes[1],
+	h6: fontSizes[1],
+	small: fontSizes[0]
+};
+
+const bodyText = fontSizes[1];
+const headingWeight = fontWeights.bold;
+const headingLineHeight = 1.4;
 
 const theme = {
 	breakpoints,
 	mediaQueries: {
-		small: `@media screen and (min-width: ${breakpoints[0]})`,
-		medium: `@media screen and (min-width: ${breakpoints[1]})`,
-		large: `@media screen and (min-width: ${breakpoints[2]})`,
-		xlarge: `@media screen and (min-width: ${breakpoints[3]})`,
+		sm: `@media screen and (min-width: ${breakpoints[0]})`,
+		md: `@media screen and (min-width: ${breakpoints[1]})`,
+		lg: `@media screen and (min-width: ${breakpoints[2]})`,
+		xl: `@media screen and (min-width: ${breakpoints[3]})`,
 	},
-	fontSizes: [
-		12, 14, 16, 20, 24, 32, 48, 64
-	],
 	colors: {
 		white,
 		grey50,
@@ -49,13 +80,19 @@ const theme = {
 	space: [
 		0, 4, 8, 16, 32, 64, 128, 256
 	],
-	fonts: {
-		base: '\'Montserrat\', sans-serif',
-	},
+	fonts,
+	fontSizes,
+	bodyText,
+	fontWeights,
+	headingWeight,
+	headingLineHeight,
+	headingFontFamily,
+	typeSizes,
 	shadows: {
 		small: '0 0 4px rgba(0, 0, 0, .125)',
 		large: '0 0 24px rgba(0, 0, 0, .125)'
-	}
+	},
+	maxContainerWidth: '992px'
 };
 
 export default theme;
