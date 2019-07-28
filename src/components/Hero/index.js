@@ -31,7 +31,7 @@ const HeroTitle = styled.h1`
 
 const HeroSubTitle = styled.div`
 	display: block;
-	color: ${({theme}) => theme.colors.grey800};
+	color: ${({theme}) => theme.colors.grey700};
 	font-size: ${({theme}) => theme.fontSizes[1]};
 	font-weight: ${({theme}) => theme.fontWeights.medium};
 	white-space: pre-wrap;
