@@ -18,7 +18,7 @@ const HeroStyled = styled.section`
 const HeroTitle = styled.h1`
 	display: block;
 	color: ${({theme}) => theme.colors.grey900};
-	font-size: ${({theme}) => theme.fontSizes[4]};
+	font-size: ${({theme}) => theme.fontSizes[3]};
 	font-weight: ${({theme}) => theme.headingWeight};
 	line-height: 1.1;
 	white-space: pre-wrap;
@@ -34,8 +34,9 @@ const HeroSubTitle = styled.div`
 	color: ${({theme}) => theme.colors.grey700};
 	font-size: ${({theme}) => theme.fontSizes[1]};
 	font-weight: ${({theme}) => theme.fontWeights.medium};
-	white-space: pre-wrap;
+	line-height: 1.31;
 	margin: 2.4rem 0;
+	white-space: pre-wrap;
 	${({theme}) => css`
 		${theme.mediaQueries.md} {
 			font-size: ${theme.fontSizes[2]};
