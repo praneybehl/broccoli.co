@@ -43,13 +43,12 @@ const ButtonStyled = styled.button`
 	}
 
 	&:disabled {
-		background-color: ${({theme}) => theme.colors.grey900};
-		color: ${({theme}) => theme.colors.white};
+		background-color: ${({theme}) => theme.colors.grey300};
+		color: ${({theme}) => theme.colors.grey700};
 		cursor: auto;
 	
 		&:hover {
-			background-color: ${({ theme }) => theme.colors.grey900};
-			color: ${({ theme }) => theme.colors.white};
+			border-color: ${({ theme }) => theme.colors.grey300};
 		}
 	}
 	${expanded}
@@ -67,10 +66,6 @@ const Button = ({children, ...props}) => {
 Button.propTypes = {
 	expanded: PropTypes.bool,
 	size: PropTypes.string,
-};
-
-Button.defaultProps = {
-	role: 'button',
 };
 
 export default Button;
