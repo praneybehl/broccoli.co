@@ -2,6 +2,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import Hero from "../../blocks/Hero";
+import {useModal} from '../../utils/hooks/useModal';
+import InvitationForm from "../../blocks/InvitationForm";
 
 const InvitePageStyled = styled.div`
 	align-items: center;
@@ -14,9 +16,14 @@ const InvitePageStyled = styled.div`
 `;
 
 const InvitePage = (props) => {
+	const [Modal, openModal] = useModal();
+
 	return (
 		<InvitePageStyled {...props}>
-			<Hero/>
+			<Hero onCtaClick={openModal}/>
+			<Modal>
+				<InvitationForm />
+			</Modal>
 		</InvitePageStyled>
 	)
 };
