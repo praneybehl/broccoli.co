@@ -6,7 +6,7 @@ import Button from "../../components/Button";
 const HeroStyled = styled.section`
 	display: flex;
 	flex-direction: column;
-	max-width: 575x;
+	max-width: 575px;
 	padding: 1.6rem;
 	text-align: center;
 	
@@ -39,6 +39,7 @@ const HeroSubTitle = styled.div`
 	${({theme}) => css`
 		${theme.mediaQueries.md} {
 			font-size: ${theme.fontSizes[2]};
+			margin: 3.2rem 0;
 		}
 	`}
 `;
