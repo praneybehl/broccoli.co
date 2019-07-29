@@ -20,7 +20,7 @@ const HeroTitle = styled.h1`
 	color: ${({theme}) => theme.colors.grey900};
 	font-size: ${({theme}) => theme.fontSizes[4]};
 	font-weight: ${({theme}) => theme.headingWeight};
-	line-height: 1.23;
+	line-height: 1.1;
 	white-space: pre-wrap;
 	${({theme}) => css`
 		${theme.mediaQueries.md} {
