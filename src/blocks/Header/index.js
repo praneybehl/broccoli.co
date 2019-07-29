@@ -14,31 +14,34 @@ const HeaderStyled = styled.header`
 	width: 100%;
 `;
 
-const HeaderLogo = styled.div`
+const HeaderLogo = styled.a`
 	color: ${({theme}) => theme.colors.grey800};
 	font-size: ${({theme}) => theme.fontSizes[2]};
 	font-weight: ${({theme}) => theme.fontWeights.bold};
 	text-align: center;
+	text-decoration: none;
 	${({theme}) => css`${theme.mediaQueries.md} {
 		text-align: left;
 		font-size: ${theme.fontSizes[3]};
 	}`}
 `;
 
-const Header = ({logoText, ...props}) => (
+const Header = ({logoText, logoHref, ...props}) => (
 	<HeaderStyled{...props}>
 		<Container>
-			<HeaderLogo>{logoText}</HeaderLogo>
+			<HeaderLogo href={logoHref}>{logoText}</HeaderLogo>
 		</Container>
 	</HeaderStyled>
 );
 
 Header.propTypes = {
 	logoText: PropTypes.string,
+	logoHref: PropTypes.string
 };
 
 Header.defaultProps = {
 	logoText: 'Broccoli & Co.',
+	logoHref: '/'
 };
 
 export default Header;
