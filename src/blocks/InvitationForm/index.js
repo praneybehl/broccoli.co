@@ -1,14 +1,19 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import styled from 'styled-components';
+import styled, {css} from 'styled-components';
 import Input from "../../components/Input";
 import {validate, useForm} from '../../utils';
 import Button from "../../components/Button";
 
 const InvitationFormStyled = styled.form`
-	padding: 3rem 2.4rem;
-	width: 100%;
-	min-width: 325px;
+	display: block;
+	padding: 3.2rem 2.4rem;
+	width: 300px;
+	${({theme}) => css`
+		${theme.mediaQueries.md} {
+			width: 375px;
+		}
+	`};
 `;
 const ErrorContainer = styled.div`
 	margin-top: 2rem;
@@ -53,51 +58,56 @@ const InvitationForm = ({
 		handleSubmit,
 		isSubmitting
 	} = useForm(validate, onSuccess);
+	const errorKeys = Object.keys(errors);
 	return (
 		<InvitationFormStyled
 			onSubmit={handleSubmit}
 			{...props}
 		>
 			<FormTitle>{formTitle}</FormTitle>
-			<Input
-				id="fullName"
-				name="fullName"
-				aria-label="Enter full name"
-				placeholder="Full Name"
-				value={values.fullName}
-				onChange={handleChange}
-				error={!!errors.fullName}
-			/>
-			<Input
-				id="email"
-				name="email"
-				aria-label="Enter email address"
-				placeholder="Email"
-				value={values.email}
-				onChange={handleChange}
-				error={!!errors.email}
-			/>
-			<Input
-				id="confirmEmail"
-				name="confirmEmail"
-				aria-label="Confirm email address"
-				placeholder="Confirm email"
-				value={values.confirmEmail}
-				onChange={handleChange}
-				error={!!errors.confirmEmail}
-			/>
-			<Button
-				type="submit"
-				expanded={true}
-				disabled={!!isSubmitting}
-			>
-				{isSubmitting ? ctaTextSending : ctaText}
-			</Button>
-			{(Object.keys(errors).length > 0) && <ErrorContainer>
-				{Object.keys(errors).map((err, idx) => (
-					<ErrorMessage key={idx}>{errors[err]}</ErrorMessage>
-				))}
-			</ErrorContainer>}
+			<div>
+				<Input
+					id="fullName"
+					name="fullName"
+					aria-label="Enter full name"
+					placeholder="Full Name"
+					value={values.fullName}
+					onChange={handleChange}
+					error={!!errors.fullName}
+				/>
+				<Input
+					id="email"
+					name="email"
+					aria-label="Enter email address"
+					placeholder="Email"
+					value={values.email}
+					onChange={handleChange}
+					error={!!errors.email}
+				/>
+				<Input
+					id="confirmEmail"
+					name="confirmEmail"
+					aria-label="Confirm email address"
+					placeholder="Confirm email"
+					value={values.confirmEmail}
+					onChange={handleChange}
+					error={!!errors.confirmEmail}
+				/>
+				<Button
+					type="submit"
+					expanded={true}
+					disabled={!!isSubmitting}
+				>
+					{isSubmitting ? ctaTextSending : ctaText}
+				</Button>
+				{(errorKeys.length > 0) && <ErrorContainer>
+					{errorKeys.map((err, idx) => (
+						<ErrorMessage key={idx}>
+							{errors[err]}
+						</ErrorMessage>
+					))}
+				</ErrorContainer>}
+			</div>
 		</InvitationFormStyled>
 	)
 };

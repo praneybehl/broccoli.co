@@ -10,7 +10,7 @@ const errorStyles = ({error, theme}) => error && ({
 const InputStyled = styled.input`
 	appearance: none;
 	background-color: ${({theme}) => theme.colors.grey50};
-	border: 1px solid ${({theme}) => theme.colors.grey400};
+	border: 2px solid ${({theme}) => theme.colors.grey400};
 	border-radius: 0;
 	box-shadow: none;
 	color: ${({theme}) => theme.colors.grey900};
