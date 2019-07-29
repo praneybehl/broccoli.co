@@ -15,7 +15,7 @@ const InputStyled = styled.input`
 	box-shadow: none;
 	color: ${({theme}) => theme.colors.grey900};
 	display: block;
-	fontSize: 1.6rem;
+	font-size: 1.4rem;
 	height: 48px;
 	margin-bottom: 1.6rem;
 	padding: 1.2rem 1.6rem;
