@@ -23,8 +23,6 @@ const ModalStyled = styled.div`
 	background-color: ${({theme}) => theme.colors.white};
 	border: 2px solid ${({theme}) => theme.colors.black};
 	position: relative;
-	width: 100%;
-	max-width: 325px;
 	z-index: 100;
 `;
 
