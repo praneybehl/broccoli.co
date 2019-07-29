@@ -18,20 +18,21 @@ const expanded = ({expanded}) =>
 const ButtonStyled = styled.button`
 	-webkit-font-smoothing: antialiased;
 	background-color: ${({theme}) => theme.colors.white};
+	border: 2px solid ${({theme}) => theme.colors.grey400};
 	color: ${({theme}) => theme.colors.grey900};
 	cursor: pointer;
 	display: block;
 	font-weight: ${({theme}) => theme.fontWeights.bold};
-	border: 2px solid ${({theme}) => theme.colors.grey400};
+	line-height: 1;
 	position: relative;
-	vertical-align: middle;
 	text-align: center;
 	text-decoration: none;
 	transition: all 0.2s;
+	vertical-align: middle;
 	
 	&:focus {
 		outline: 2px dotted ${({theme}) => theme.colors.grey700};
-		outline-offset: 3px;
+		outline-offset: 2px;
 	}
 	
 	&:hover,
