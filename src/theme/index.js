@@ -14,6 +14,10 @@ const grey700 = '#616161';
 const grey800 = '#424242';
 const grey900 = '#212121';
 const black = '#000000';
+const black15 = 'rgba(0, 0, 0, 0.15)';
+const black25 = 'rgba(0, 0, 0, 0.25)';
+const black50 = 'rgba(0, 0, 0, 0.50)';
+const black75 = 'rgba(0, 0, 0, 0.75)';
 const error = '#cc0000';
 const bodyBg = white;
 const bodyColor = grey900;
@@ -66,6 +70,10 @@ const theme = {
 		grey800,
 		grey900,
 		black,
+		black15,
+		black25,
+		black50,
+		black75,
 		bodyBg,
 		bodyColor,
 		error,
