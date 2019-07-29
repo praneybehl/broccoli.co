@@ -1,9 +1,9 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import React, {useState} from 'react';
 import styled from 'styled-components';
 import Hero from "../../blocks/Hero";
-import {useModal} from '../../utils/hooks/useModal';
+import {useModal} from '../../utils';
 import InvitationForm from "../../blocks/InvitationForm";
+import InvitationSent from "../../blocks/InvitationSent";
 
 const InvitePageStyled = styled.div`
 	align-items: center;
@@ -16,24 +16,21 @@ const InvitePageStyled = styled.div`
 `;
 
 const InvitePage = (props) => {
-	const [Modal, openModal] = useModal();
+	const [submitted, setSubmitted] = useState(false);
+	const [Modal, openModal, closeModal] = useModal();
+
+	const onSuccess = () => setSubmitted(true);
 
 	return (
 		<InvitePageStyled {...props}>
 			<Hero onCtaClick={openModal}/>
 			<Modal>
-				<InvitationForm />
+				{!submitted ? <InvitationForm onSuccess={onSuccess}/>
+					: <InvitationSent onCtaClick={closeModal} />
+				}
 			</Modal>
 		</InvitePageStyled>
 	)
-};
-
-InvitePage.propTypes = {
-	logoText: PropTypes.string,
-};
-
-InvitePage.defaultProps = {
-	logoText: 'Broccoli & Co.',
 };
 
 export default InvitePage;
