@@ -10,22 +10,23 @@ const errorStyles = ({error, theme}) => error && ({
 const InputStyled = styled.input`
 	appearance: none;
 	background-color: ${({theme}) => theme.colors.grey50};
-	border: 1px solid ${({theme}) => theme.colors.grey700};
+	border: 1px solid ${({theme}) => theme.colors.grey400};
 	border-radius: 0;
 	box-shadow: none;
 	color: ${({theme}) => theme.colors.grey900};
 	display: block;
 	fontSize: 1.6rem;
 	height: 48px;
+	margin-bottom: 1.6rem;
 	padding: 1.2rem 1.6rem;
 	width: 100%;
 
-	'&:focus': {
+	&:focus {
 		outline: 2px dotted ${({theme}) => theme.colors.grey700};
-		outline-offset: 3px;
-	},
+		outline-offset: 2px;
+	}
 
-	'&::placeholder': {
+	&::placeholder {
 		color: ${({theme}) => theme.colors.grey500};
 	}
 	${errorStyles}
@@ -49,3 +50,5 @@ Input.defaultProps = {
 	error: false,
 	onChange: () => {},
 };
+
+export default Input;
