@@ -17,7 +17,7 @@ const expanded = ({expanded}) =>
 
 const ButtonStyled = styled.button`
 	-webkit-font-smoothing: antialiased;
-	background-color: ${({theme}) => theme.colors.white};
+	background-color: ${({theme}) => theme.colors.grey50};
 	border: 2px solid ${({theme}) => theme.colors.grey700};
 	color: ${({theme}) => theme.colors.grey900};
 	cursor: pointer;

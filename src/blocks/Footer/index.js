@@ -4,6 +4,7 @@ import Container from "../../components/Container";
 
 const FooterStyled = styled.footer`
 	align-items: center;
+	background-color: ${({theme}) => theme.colors.grey50};
 	border-top: 2px solid ${({theme}) => theme.colors.grey200};
 	display: flex;
 	padding: 1.6rem 0;
