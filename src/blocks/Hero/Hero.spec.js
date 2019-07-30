@@ -5,23 +5,22 @@ import Hero from "./index";
 describe('<Hero/> block', () => {
 	afterEach(cleanup);
 
+	const {defaultProps} = Hero;
+
 	it('renders the Hero heading', () => {
-		const heading = 'A better way\n' +
-			' to enjoy every day.';
 		const { container } = render(<Hero />);
-		expect(container.textContent).toMatch(heading);
+		expect(container.textContent).toMatch(defaultProps.title);
 	});
 
 	it('renders the Hero sub-heading', () => {
-		const subHeading = 'Be the first to know when we launch.';
 		const { container } = render(<Hero />);
-		expect(container.textContent).toMatch(subHeading);
+		expect(container.textContent).toMatch(defaultProps.subTitle);
 	});
 
 	it('renders the Request invite button', () => {
 		const { container } = render(<Hero />);
 		const button = container.querySelector('button');
-		expect(button.textContent).toMatch('Request an invite');
+		expect(button.textContent).toMatch(defaultProps.ctaText);
 	});
 
 	it('clicking Request invite button calls onCtaClick function', () => {
