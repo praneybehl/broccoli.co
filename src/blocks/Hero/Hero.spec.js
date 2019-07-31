@@ -1,5 +1,5 @@
 import React from 'react';
-import { cleanup, render, fireEvent } from '../../utils/test-utils';
+import { cleanup, render } from '../../utils/test-utils';
 import Hero from "./index";
 
 describe('<Hero/> block', () => {
@@ -23,11 +23,10 @@ describe('<Hero/> block', () => {
 		expect(button.textContent).toMatch(defaultProps.ctaText);
 	});
 
-	it('clicking Request invite button calls onCtaClick function', () => {
+	it('calls onCtaClick when clicked the Request invite button', () => {
 		const mockOnCtaClick = jest.fn();
-		const { container } = render(<Hero onCtaClick={mockOnCtaClick}/>);
-		const button = container.querySelector('button');
-		fireEvent.click(button);
+		const { getByText } = render(<Hero onCtaClick={mockOnCtaClick}/>);
+		getByText(defaultProps.ctaText).click()
 		expect(mockOnCtaClick.mock.calls.length).toEqual(1);
 	});
 });
