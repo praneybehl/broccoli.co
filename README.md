@@ -17,7 +17,7 @@
 
 
 # Description
-Broccoli & Co., an upcoming online service company, would like to let people to "Request an invitation" on the website.
+Broccoli & Co., an upcoming online service company, would like to let people to "Request an invitation" on their website.
 This application showcases a minimalistic design with an strong focus on accessibility and good color contrast ratio.  
 
 # Deployment Site
