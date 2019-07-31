@@ -280,6 +280,41 @@ describe('App', () => {
 					.get(INVITATION_SENT)
 					.should('exist');
 			});
+
+		});
+
+		// InvitationSent block
+		describe('InvitationSent block', () => {
+
+			it('exists', () => {
+				cy.get(INVITATION_SENT)
+					.should('exist')
+			});
+
+			it('renders title', () => {
+				cy.get(INVITATION_SENT_TITLE)
+					.should('exist')
+					.should('contain', 'All done!');
+			});
+
+			it('renders success message', () => {
+				cy.get(INVITATION_SENT_MSG)
+					.should('exist')
+					.should('contain', 'You will be one of the first to experience Broccoli & Co. when we launch.');
+			});
+
+			it('renders `OK` button', () => {
+				cy.get(INVITATION_SENT_BTN)
+					.should('exist');
+			});
+
+			it('closes the modal when clicked on `OK` button', () => {
+				cy.get(INVITATION_SENT_BTN)
+					.click()
+					.get(MODAL_CONTAINER)
+					.should('not.exist');
+			});
+
 		});
 	});
 });
