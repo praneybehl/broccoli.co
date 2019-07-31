@@ -60,5 +60,20 @@ describe('App', () => {
 		});
 	});
 
+	// Invite page
+	describe('Invite Page', () => {
 
+		it('exists', () => {
+			cy.get(INVITE_PAGE)
+				.should('exist')
+		});
+
+		it('renders children absolutely centered', () => {
+			cy.get(INVITE_PAGE)
+				.should('have.css', 'display', 'flex')
+				.should('have.css', 'align-items', 'center')
+				.should('have.css', 'justify-content', 'center')
+		});
+
+	});
 });
