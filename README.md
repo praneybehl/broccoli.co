@@ -22,7 +22,8 @@ Broccoli & Co., an upcoming online service company, would like to let people to 
 This application showcases a minimalistic design with an strong focus on accessibility and good color contrast ratio.  
 
 # Deployment Site
-The production and branches build and CD is setup with Netlify.com.
+The production and Continuous Delivery is setup with Netlify.com.
+
 The live project site can be found at: [`https://broccoli-co.netlify.com`](https://broccoli-co.netlify.com).  
 For branch based build follow the link above in the `nelify` build badge.
 
@@ -33,6 +34,7 @@ React, React-Hooks, styled-components, styled-system, axios, prop-types, create-
 
 ## Testing
 For testing, this project is setup with the following testing tools and libraries:
+
 `Unit tests: jest and @testing-library/react`
 `Integration and End-to-End tests: cypress with @testing-library/cypress`
 
