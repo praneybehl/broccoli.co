@@ -155,6 +155,131 @@ describe('App', () => {
 
 		});
 
+		// InvitationForm block
+		describe('InvitationForm block', () => {
+			// Make sure Modal is open
+			it('exists', () => {
+				cy.get(REQUEST_INVITE_BTN)
+					.click()
+					.wait(500)
+					.get(INVITATION_FORM)
+					.should('exist')
+			});
 
+			it('renders title', () => {
+				cy.get(INVITATION_FORM_TITLE)
+					.should('exist')
+					.should('contain', 'Request an invite')
+			});
+
+			it('renders full name field', () => {
+				cy.getByLabelText(FULL_NAME)
+					.should('exist')
+			});
+
+			it('renders email field', () => {
+				cy.getByLabelText(EMAIL)
+					.should('exist')
+			});
+
+			it('renders confirm email field', () => {
+				cy.getByLabelText(CONFIRM_EMAIL)
+					.should('exist')
+			});
+
+			it('renders send button', () => {
+				cy.get(SEND_BTN)
+					.should('exist')
+			});
+
+			it('displays red border on input fields on validation error', () => {
+				cy.get(SEND_BTN)
+					.click()
+					.getByLabelText(FULL_NAME)
+					.should('have.css', 'border-color', 'rgb(204, 0, 0)')
+					.getByLabelText(EMAIL)
+					.should('have.css', 'border-color', 'rgb(204, 0, 0)')
+					.getByLabelText(CONFIRM_EMAIL)
+					.should('have.css', 'border-color', 'rgb(204, 0, 0)');
+			});
+
+			it('displays error messages if input fields have no values on submission ', () => {
+				cy.get(ERROR_CONTAINER)
+					.should('contain', 'Full name is required')
+					.get(ERROR_CONTAINER)
+					.should('contain', 'Email address is required')
+					.get(ERROR_CONTAINER)
+					.should('contain', 'Confirmation email is required');
+			});
+
+			it('displays error messages if input fields have invalid values on submission ', () => {
+				cy.getByLabelText(FULL_NAME)
+					.type('john')
+					.getByLabelText(EMAIL)
+					.type('john@g.c')
+					.getByLabelText(CONFIRM_EMAIL)
+					.type('john')
+					.get(SEND_BTN)
+					.click()
+					.get(ERROR_CONTAINER)
+					.should('contain', 'Full name is invalid')
+					.get(ERROR_CONTAINER)
+					.should('contain', 'Email address is invalid')
+					.get(ERROR_CONTAINER)
+					.should('contain', 'Email doesn\'t match');
+			});
+
+			it('displays sending state on submission', () => {
+				cy.get(MODAL_CLOSE)
+					.click()
+					.get(REQUEST_INVITE_BTN)
+					.click()
+					.getByLabelText(FULL_NAME)
+					.type('john doe')
+					.getByLabelText(EMAIL)
+					.type( 'usedemail@airwallex.com')
+					.getByLabelText(CONFIRM_EMAIL)
+					.type('usedemail@airwallex.com')
+					.get(SEND_BTN)
+					.click()
+					.get(SEND_BTN)
+					.should('contain', 'Sending, please wait');
+			});
+
+			it('displays serve error message if email is already in use', () => {
+				cy.get(MODAL_CLOSE)
+					.click()
+					.get(REQUEST_INVITE_BTN)
+					.click()
+					.getByLabelText(FULL_NAME)
+					.type('john doe')
+					.getByLabelText(EMAIL)
+					.type( 'usedemail@airwallex.com')
+					.getByLabelText(CONFIRM_EMAIL)
+					.type('usedemail@airwallex.com')
+					.get(SEND_BTN)
+					.click()
+					.get(ERROR_CONTAINER)
+					.should('contain', 'Bad Request: Email is already in use');
+			});
+
+			it('displays InvitationSent block on successful submission', () => {
+				cy.get(MODAL_CLOSE)
+					.click()
+					.get(REQUEST_INVITE_BTN)
+					.click()
+					.getByLabelText(FULL_NAME)
+					.type('john doe')
+					.getByLabelText(EMAIL)
+					.type( 'johndoe@email.com')
+					.getByLabelText(CONFIRM_EMAIL)
+					.type('johndoe@email.com')
+					.get(SEND_BTN)
+					.click()
+					.wait(500)
+					.get(INVITATION_SENT)
+					.should('exist');
+			});
+		});
 	});
 });
