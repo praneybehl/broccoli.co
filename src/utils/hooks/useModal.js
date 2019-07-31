@@ -44,9 +44,10 @@ const ModalCloseBtn = styled.button`
 	&:hover {
 		background-color: ${({theme}) => theme.colors.grey200};
 	}
-	
+		
 	&:focus {
-		outline: none;
+		outline: 2px dotted ${({theme}) => theme.colors.grey700};
+		outline-offset: 2px;
 	}
 `;
 
@@ -56,16 +57,13 @@ export const useModal = () => {
 	const modalRef = useRef(null);
 
 	// Api method to open Modal
-	const openModal = () => {
-		setOpen(true);
-		modalRef.current.focus();
-	};
+	const openModal = () => setOpen(true);
 
 	// Api method to close Modal
 	const closeModal = () => setOpen(false);
 
 	const onClickOutsideHandler = (event) => {
-		if(!modalRef.current.contains(event.target)) {
+		if(open && !modalRef.current.contains(event.target)) {
 			closeModal();
 		}
 	};
@@ -80,7 +78,6 @@ export const useModal = () => {
 
 	const Modal = ({width, children, ...props}) => {
 		useEffect(() => {
-
 			if(isClient) {
 				window.addEventListener('click', onClickOutsideHandler);
 				window.addEventListener('keyup', onPressEscHandler);
@@ -90,7 +87,7 @@ export const useModal = () => {
 				}
 			}
 		}, []);
-		return (
+		return (open &&
 			<>
 				<ModalOverlay open={open}>
 					<ModalStyled
@@ -98,7 +95,7 @@ export const useModal = () => {
 						{...props}
 					>
 						<ModalCloseBtn
-							aria-label="Close modal"
+							aria-label="Close modal button"
 							onClick={closeModal}
 						>
 							×
