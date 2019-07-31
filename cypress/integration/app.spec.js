@@ -49,7 +49,7 @@ describe('App', () => {
 			cy.get(HEADER)
 				.should('exist')
 		});
-		it('renders a height of 60px', () => {
+		it('renders with a height of 60px', () => {
 			cy.get(HEADER)
 				.should('have.css', 'height', '60px')
 		});
