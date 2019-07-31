@@ -6,14 +6,14 @@
 
 ## Table of Contents
 
-* [Description](#markdown-header-description)
-* [Deployment Site](#markdown-header-static-build-site)
-* [Tech Used](#markdown-header-tech-used)
-* [Testing](#markdown-header-testing)
-* [Installation and Prerequisites](#markdown-header-installation-and-prerequisites)
-* [Getting Started](#markdown-header-getting-started)
-* [Directory Structure](#markdown-header-directory-structure)
-* [NPM scripts dictionary ](#markdown-header-npm-scripts-dictionary)
+* [Description](#user-content-description)
+* [Deployment Site](#user-content-static-build-site)
+* [Tech Used](#user-content-tech-used)
+* [Testing](#user-content-testing)
+* [Installation and Prerequisites](#user-content-installation-and-prerequisites)
+* [Getting Started](#user-content-getting-started)
+* [Directory Structure](#user-content-directory-structure)
+* [NPM scripts dictionary ](#user-content-npm-scripts-dictionary)
 
 
 # Description
