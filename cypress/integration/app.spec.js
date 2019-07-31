@@ -27,8 +27,20 @@ const INVITATION_SENT_BTN = '[class*="InvitationSent__InvitationSentStyled-"] [c
 
 describe('App', () => {
 
+	// Navigation to page
 	before(() => cy
 		.visit('/')
-		.wait(500));
+		.wait(500)
+	);
+
+	it('exists', () => {
+		cy.get(APP)
+			.should('exist');
+	});
+
+	it('takes full height of device', () => {
+		cy.get(APP)
+			.should('have.css', 'height', '720px')
+	});
 
 });
