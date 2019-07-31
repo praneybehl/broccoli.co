@@ -108,5 +108,53 @@ describe('App', () => {
 			});
 
 		});
+
+		// Modal
+		describe('Modal', () => {
+
+			it('renders Modal overlay', () => {
+				// Make sure Modal is open
+				cy.get(MODAL_OVERLAY)
+					.should('exist')
+			});
+
+			it('renders Modal container', () => {
+				cy.get(MODAL_CONTAINER)
+					.should('exist')
+			});
+
+			it('renders close modal button', () => {
+				cy.get(MODAL_CLOSE)
+					.should('exist')
+			});
+
+			it('should close the modal, when clicked on close modal button', () => {
+				cy.get(MODAL_CLOSE)
+					.click()
+					.get(MODAL_CONTAINER)
+					.should('not.exist')
+			});
+
+			it('should close the modal when clicked outside Modal container', () => {
+				cy.get(REQUEST_INVITE_BTN)
+					.click()
+					.get(MODAL_OVERLAY)
+					.click(50,50)
+					.get(MODAL_CONTAINER)
+					.should('not.exist')
+			});
+
+			it('should close the modal when pressed `ESC` key', () => {
+				cy.get(REQUEST_INVITE_BTN)
+					.click()
+					.getByLabelText(FULL_NAME)
+					.type('{esc}')
+					.get(MODAL_CONTAINER)
+					.should('not.exist')
+			});
+
+		});
+
+
 	});
 });
