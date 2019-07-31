@@ -317,4 +317,29 @@ describe('App', () => {
 
 		});
 	});
+
+	// Footer block
+	describe('Footer block', () => {
+		it('renders a \'footer\' element', () => {
+			cy.get('footer')
+				.should('exist')
+				.should('have.css', 'height', '64px')
+		});
+		it('renders a height of 64px', () => {
+			cy.get('footer')
+				.should('exist')
+				.should('have.css', 'height', '64px')
+		});
+		it('renders footer text', () => {
+			cy.get('[class*="Footer__FooterText-"]')
+				.should('exist')
+				.should('contain', 'Made with ❤ ️in Melbourne.')
+		});
+		it('renders copyright text', () => {
+			cy.get('[class*="Footer__FooterText-"]')
+				.should('exist')
+				.should('contain', '© 2019 Broccoli & Co. All rights reserved.')
+		});
+	});
+
 });
