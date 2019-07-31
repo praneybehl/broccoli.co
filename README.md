@@ -13,6 +13,7 @@
 * [Installation and Prerequisites](#user-content-installation-and-prerequisites)
 * [Getting Started](#user-content-getting-started)
 * [Directory Structure](#user-content-directory-structure)
+* [Version Control](#user-content-version-control)
 * [NPM scripts dictionary ](#user-content-npm-scripts-dictionary)
 
 
@@ -98,7 +99,7 @@ Below you can find full details about significant files and folders.
 .                                       // Project folder.
 ├── cypress                             // Cypress folder for end-to-end tests.
 │   ├── integration
-│   │   └── app.spec.js                 // End-toend application tests.
+│   │   └── app.spec.js                 // End-to-end application tests.
 │   └── ...
 ├── public                              // All public static assets go here.
 │   ├── fonts                           // Fonts' files.
@@ -136,6 +137,11 @@ Below you can find full details about significant files and folders.
 ├── package.json                        // Project dependencies.
 └── README.md                           // Documentation for project.
 ```
+
+## Version Control
+This project is git version control along with [Conventional Commits](https://www.conventionalcommits.org/) 
+specification for adding human and machine readable meaning to commit messages.
+
 
 ## NPM scripts dictionary
 
