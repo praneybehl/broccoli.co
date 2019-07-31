@@ -92,7 +92,7 @@ $ yarn test:e2e
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 The the structure of the project is set to follow the hierarchy:
 
-`app <- page <- blocks  <- components`.
+`app <- pages <- blocks  <- components`.
 
 The project doesn't make use of any css frameworks and just the simple resets.
 The rest of the folders and files only exist to make your life easier, and should not need to be changed.
