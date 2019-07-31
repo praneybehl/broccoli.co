@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from "prop-types";
-import styled from 'styled-components';
+import styled from 'styled-components/macro';
 
 // parse and define custom button size properties;
 const buttonSizes = ({size, theme}) => {

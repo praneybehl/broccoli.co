@@ -1,5 +1,5 @@
 import React from 'react';
-import styled, {ThemeProvider} from 'styled-components';
+import styled, {ThemeProvider} from 'styled-components/macro';
 import theme from './theme';
 import {GlobalStyles} from './theme/global';
 import Header from "./blocks/Header";

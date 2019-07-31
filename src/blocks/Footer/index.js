@@ -1,5 +1,5 @@
 import React from 'react';
-import styled from 'styled-components';
+import styled from 'styled-components/macro';
 import Container from "../../components/Container";
 
 const FooterStyled = styled.footer`
@@ -35,5 +35,7 @@ const Footer = (props) => {
 		</FooterStyled>
 	)
 };
+
+Footer.displayName = "Footer";
 
 export default Footer;

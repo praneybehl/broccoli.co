@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import styled, {css} from 'styled-components';
+import styled, {css} from 'styled-components/macro';
 import Input from "../../components/Input";
 import {validate, useForm} from '../../utils';
 import Button from "../../components/Button";
@@ -70,7 +70,7 @@ const InvitationForm = ({
 					id="fullName"
 					name="fullName"
 					aria-label="Enter full name"
-					placeholder="Full Name"
+					placeholder="Full name"
 					value={values.fullName}
 					onChange={handleChange}
 					error={!!errors.fullName}

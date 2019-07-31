@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import styled from 'styled-components';
+import styled from 'styled-components/macro';
 import Hero from "../../blocks/Hero";
 import {useModal} from '../../utils';
 import InvitationForm from "../../blocks/InvitationForm";
