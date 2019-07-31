@@ -36,7 +36,8 @@ React, React-Hooks, styled-components, styled-system, axios, prop-types, create-
 For testing, this project is setup with the following testing tools and libraries:
 
 `Unit tests: jest and @testing-library/react`
-`Integration and End-to-End tests: cypress with @testing-library/cypress`
+
+`Integration and E2E tests: cypress with @testing-library/cypress`
 
 ## Installation and Prerequisites
 
