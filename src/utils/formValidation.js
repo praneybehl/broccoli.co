@@ -7,7 +7,7 @@ export function validate(values) {
 	let errors = {};
 
 	if (!values.fullName) {
-		errors.fullName = 'Name address is required';
+		errors.fullName = 'Full name is required';
 	} else if (!regex.fullName.test(values.fullName)) {
 		errors.fullName = 'Full name is invalid';
 	} else delete errors.fullName;
