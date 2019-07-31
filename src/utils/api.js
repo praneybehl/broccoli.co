@@ -6,7 +6,7 @@ export const requestInvitation = (data, onSuccess, onError) => {
 	const source = CancelToken.source();
 	axios.post(ENDPOINT, data, {
 			cancelToken: source.token,
-			validateStatus: status => status >= 200 && status < 300
+			validateStatus: status => !!(status === 200 || status === 400)
 		})
 		.then(response => {
 			if (response.status === 200) {
