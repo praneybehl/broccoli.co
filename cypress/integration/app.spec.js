@@ -75,5 +75,38 @@ describe('App', () => {
 				.should('have.css', 'justify-content', 'center')
 		});
 
+		// Hero block
+		describe('Hero Block', () => {
+
+			it('renders Hero block', () => {
+				cy.get(HERO)
+					.should('exist')
+			});
+
+			it('renders title', () => {
+				cy.get(HERO_TITLE)
+					.should('exist')
+					.should('contain', 'A better way\n to enjoy every day.')
+			});
+
+			it('renders sub title', () => {
+				cy.get(HERO_SUBTITLE)
+					.should('exist')
+					.should('contain', 'Be the first to know when we launch.')
+			});
+
+			it('renders `Request invite` button', () => {
+				cy.get(REQUEST_INVITE_BTN)
+					.should('exist')
+			});
+
+			it('opens the Modal when `Request invite` button is clicked', () => {
+				cy.get(REQUEST_INVITE_BTN)
+					.click()
+					.get(MODAL_OVERLAY)
+					.should('exist');
+			});
+
+		});
 	});
 });
