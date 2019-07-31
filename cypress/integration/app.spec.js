@@ -1,7 +1,7 @@
 // End-to-end application tests
 
 // Element selectors
-const APP = '[class*="app__AppStyled-"]';
+const APP = '[class*="App__AppStyled-"]';
 const HEADER = 'header';
 const LOGO = '[class*="Header__HeaderLogo-"]';
 const INVITE_PAGE = '[class*="InvitePage__InvitePageStyled-"]';
