@@ -43,4 +43,22 @@ describe('App', () => {
 			.should('have.css', 'height', '720px')
 	});
 
+	// Header block
+	describe('Header block', () => {
+		it('renders a \'header\' element', () => {
+			cy.get(HEADER)
+				.should('exist')
+		});
+		it('renders a height of 60px', () => {
+			cy.get(HEADER)
+				.should('have.css', 'height', '60px')
+		});
+		it('renders Logo', () => {
+			cy.get(LOGO)
+				.should('exist')
+				.should('contain', 'Broccoli & Co.')
+		});
+	});
+
+
 });
