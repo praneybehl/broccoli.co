@@ -56,8 +56,8 @@ Install [Yarn](https://yarnpkg.com/lang/en/docs/install/)
 
 1. Clone this repo 
 ```bash
-$ git clone https://github.com/moneyplace/mp-helpcentre
-$ cd mp-helpcentre
+$ git clone https://github.com/praneybehl/broccoli.co
+$ cd broccoli.co
 ```
 
 2. NPM scripts dictionary Install Dependencies
